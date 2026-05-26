@@ -25,82 +25,84 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav 
-      id="navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
-        scrolled 
-          ? 'bg-white/95 backdrop-blur-md py-2 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-b border-black/10' 
-          : 'bg-transparent py-4 lg:py-8'
-      } translate-y-0 opacity-100`}
-    >
-      <div className="max-w-[1400px] mx-auto px-4 lg:px-8 flex justify-between items-center">
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-4"
-        >
-          <Link 
-            to="/"
-            className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-black flex items-center justify-center text-white font-black text-xl hover:scale-105 active:scale-95 transition-transform shadow-[4px_4px_0px_rgba(0,0,0,1)]"
-            style={{ backgroundColor: COLORS.black }}
+    <>
+      <nav 
+        id="navbar"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+          scrolled 
+            ? 'bg-white/95 backdrop-blur-md py-2 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-b border-black/10' 
+            : 'bg-transparent py-4 lg:py-8'
+        } translate-y-0 opacity-100`}
+      >
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 flex justify-between items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex items-center gap-4"
           >
-            MF.
-          </Link>
-        </motion.div>
+            <Link 
+              to="/"
+              className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-black flex items-center justify-center text-white font-black text-xl hover:scale-105 active:scale-95 transition-transform shadow-[4px_4px_0px_rgba(0,0,0,1)]"
+              style={{ backgroundColor: COLORS.black }}
+            >
+              MF.
+            </Link>
+          </motion.div>
 
-        {/* Desktop Links */}
-        <div className="hidden lg:flex space-x-6 items-center">
-          {NAV_LINKS.map((link, i) => {
-            const isActive = location.pathname === link.href;
-            return (
-              <MotionLink
-                key={link.name}
-                to={link.href}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                whileHover={{ 
-                  scale: 1.05, 
-                  translateY: -2,
-                }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-5 py-2.5 border-[3px] border-black text-[12px] font-black uppercase tracking-widest rounded-xl transition-all relative overflow-hidden group`}
-                style={{ 
-                  backgroundColor: isActive ? link.color : (scrolled ? COLORS.offWhite : 'white'),
-                  boxShadow: isActive 
-                    ? `4px 4px 0px ${COLORS.black}` 
-                    : `0px 0px 0px ${COLORS.black}`,
-                }}
-              >
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-                  style={{ backgroundColor: link.color, zIndex: 0 }}
-                />
-                <span className="relative z-10 transition-colors duration-300" style={{ color: COLORS.black }}>
-                  {link.name}
-                </span>
-                {/* Active Underline/Bar effect when scrolled */}
-                {isActive && (
-                  <motion.div 
-                    layoutId="navbar-active"
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-black"
+          {/* Desktop Links */}
+          <div className="hidden lg:flex space-x-6 items-center">
+            {NAV_LINKS.map((link, i) => {
+              const isActive = location.pathname === link.href;
+              return (
+                <MotionLink
+                  key={link.name}
+                  to={link.href}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    translateY: -2,
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`px-5 py-2.5 border-[3px] border-black text-[12px] font-black uppercase tracking-widest rounded-xl transition-all relative overflow-hidden group`}
+                  style={{ 
+                    backgroundColor: isActive ? link.color : (scrolled ? COLORS.offWhite : 'white'),
+                    boxShadow: isActive 
+                      ? `4px 4px 0px ${COLORS.black}` 
+                      : `0px 0px 0px ${COLORS.black}`,
+                  }}
+                >
+                  <div 
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                    style={{ backgroundColor: link.color, zIndex: 0 }}
                   />
-                )}
-              </MotionLink>
-            );
-          })}
-        </div>
+                  <span className="relative z-10 transition-colors duration-300" style={{ color: COLORS.black }}>
+                    {link.name}
+                  </span>
+                  {/* Active Underline/Bar effect when scrolled */}
+                  {isActive && (
+                    <motion.div 
+                      layoutId="navbar-active"
+                      className="absolute bottom-0 left-0 right-0 h-1 bg-black"
+                    />
+                  )}
+                </MotionLink>
+              );
+            })}
+          </div>
 
-        {/* Mobile Toggle */}
-        <div className="lg:hidden">
-          <button 
-            onClick={() => setIsOpen(!isOpen)} 
-            className="p-3 bg-white text-black border-[3px] border-black rounded-xl shadow-[4px_4px_1px_rgba(0,0,0,1)] hover:scale-105 active:scale-95 transition-all"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Toggle */}
+          <div className="lg:hidden">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="p-3 bg-white text-black border-[3px] border-black rounded-xl shadow-[4px_4px_1px_rgba(0,0,0,1)] hover:scale-105 active:scale-95 transition-all"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -110,7 +112,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-white z-[60] flex flex-col p-8 lg:hidden"
+            className="fixed inset-0 z-[60] flex flex-col p-8 lg:hidden bg-white"
           >
             <div className="flex justify-between items-center mb-12">
               <span className="text-3xl font-black">MF.</span>
@@ -157,6 +159,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   );
 }
