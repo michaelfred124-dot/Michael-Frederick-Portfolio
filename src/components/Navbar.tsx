@@ -95,7 +95,7 @@ export default function Navbar() {
         <div className="lg:hidden">
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="p-3 bg-black text-white rounded-xl shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:scale-105 active:scale-95 transition-all"
+            className="p-3 bg-white text-black border-[3px] border-black rounded-xl shadow-[4px_4px_1px_rgba(0,0,0,1)] hover:scale-105 active:scale-95 transition-all"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -116,9 +116,9 @@ export default function Navbar() {
               <span className="text-3xl font-black">MF.</span>
               <button 
                 onClick={() => setIsOpen(false)} 
-                className="p-3 border-4 border-black rounded-2xl bg-black text-white shadow-[6px_6px_0px_rgba(0,0,0,0.2)]"
+                className="p-3 border-[3px] border-black rounded-xl bg-white text-black shadow-[4px_4px_1px_rgba(0,0,0,1)] hover:scale-105 active:scale-95 transition-all"
               >
-                <X className="w-8 h-8" />
+                <X className="w-6 h-6" />
               </button>
             </div>
             <div className="flex flex-col space-y-4">
