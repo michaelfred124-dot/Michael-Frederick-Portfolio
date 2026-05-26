@@ -8,7 +8,7 @@ const EXPERIENCES = [
     location: 'San Jose, California',
     roles: [
       {
-        title: 'Project Manager',
+        title: 'Producer',
         period: 'Aug 2025 - Present',
         description: 'Overseeing the full production process from pre-production to post-production. Managing schedules, delegating and tracking assignments, and coordinating between directors, artists, and crew.',
         skills: ['3D Animation', 'Microsoft Office', 'Project Management', 'Team Leadership']

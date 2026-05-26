@@ -40,7 +40,7 @@ export const SKILLS: Skill[] = [
   },
   {
     title: 'Project Management',
-    description: 'I’m a project manager currently working on the short film Sticky Fingers, where I oversee schedules, coordinate teams, and ensure the creative vision is executed smoothly from start to finish.',
+    description: 'I’m a producer currently working on the short film Sticky Fingers, where I oversee schedules, coordinate teams, and ensure the creative vision is executed smoothly from start to finish.',
     icon: 'Briefcase',
     color: COLORS.purple,
   },
@@ -55,8 +55,8 @@ export const SKILLS: Skill[] = [
 export const PROJECTS: Project[] = [
   {
     title: 'Sticky Fingers',
-    description: '3D Short Film - Project Manager & Animator',
-    tags: ['Animation', 'Project Management', 'Rigging'],
+    description: '3D Short Film - Producer & Animator',
+    tags: ['Animation', 'Production', 'Rigging'],
     image: stickyFingersImg,
     link: '#',
   },

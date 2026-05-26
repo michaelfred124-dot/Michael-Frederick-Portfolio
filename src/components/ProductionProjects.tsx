@@ -9,7 +9,7 @@ import animationImg from '../assets/AnimRef.jpg';
 const PROD_PROJECTS = [
   {
     title: 'Sticky Fingers',
-    role: 'Project Manager',
+    role: 'Producer',
     duration: '9 months',
     teamSize: '15+ Artists & Tech',
     outcome: 'Successful pipeline implementation & ahead of schedule',
