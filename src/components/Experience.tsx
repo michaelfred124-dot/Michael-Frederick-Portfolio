@@ -17,7 +17,7 @@ const EXPERIENCES = [
         title: 'Rigging Lead',
         period: 'Sep 2025 - Present',
         description: 'Designing and implementing character and prop rigs. Collaborating with the animation team to ensure rigs meet performance, flexibility, and usability needs.',
-        skills: ['Rigging', 'Technical Support', 'Maya', 'Python', 'Problem Solving']
+        skills: ['Rigging', 'Technical Support', 'Maya', 'Problem Solving']
       },
       {
         title: '3D Animator',
@@ -89,7 +89,7 @@ const EDUCATION = [
     degree: 'Bachelor of Fine Arts - BFA, Animation, Interactive Technology, Video Graphics and Special Effects',
     period: '2020 - 2026',
     activities: 'Shrunken Head Man Club',
-    skills: ['Painting', 'Graphic Design Software', '3D Modeling', 'Animation Theory']
+    skills: ['3D Animation Production', '3D Modeling', 'Illustration']
   },
   {
     school: 'Las Positas College',

@@ -154,7 +154,7 @@ export default function Navbar() {
               className="mt-auto pt-12 border-t border-black/10"
             >
               <p className="text-black/40 font-bold uppercase tracking-widest text-sm mb-4">Let's Connect</p>
-              <p className="text-xl font-black">michaelfred124@gmail.com</p>
+              <p className="text-xl font-black">frederick.e.michael@gmail.com</p>
             </motion.div>
           </motion.div>
         )}
