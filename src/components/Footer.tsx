@@ -37,9 +37,14 @@ export default function Footer() {
           <div className="flex flex-col space-y-6">
             <h4 className="text-xs uppercase font-bold tracking-[0.4em] text-white/40">Socials</h4>
             <div className="flex flex-col space-y-4">
-              <a href="#" className="text-lg font-bold hover:text-white/60 transition-colors">LinkedIn</a>
-              <a href="#" className="text-lg font-bold hover:text-white/60 transition-colors">Vimeo</a>
-              <a href="#" className="text-lg font-bold hover:text-white/60 transition-colors">ArtStation</a>
+              <a 
+                href="https://www.linkedin.com/in/michael-frederick-495333176?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-lg font-bold hover:text-white/60 transition-colors"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>
